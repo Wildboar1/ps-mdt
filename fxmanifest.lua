@@ -1,32 +1,35 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Flawws, Flakey, Idris and the Project Sloth team'
-description 'EchoRP MDT Rewrite for QBCore'
-version '2.7.3'
+version '1.4.3'
+description 'https://github.com/Project-Sloth/ps-dispatch'
 
-lua54 'yes'
-
-shared_script 'shared/config.lua'
-
-server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'server/utils.lua',
-    'server/dbm.lua',
-    'server/main.lua'
+shared_scripts {
+    'config.lua',
+    'locales/locales.lua',
 }
-client_scripts{
-    'client/main.lua',
-    'client/cl_impound.lua',
-    'client/cl_mugshot.lua'
-} 
 
-ui_page 'ui/dashboard.html'
+client_scripts{
+    '@PolyZone/client.lua',
+    '@PolyZone/CircleZone.lua',
+    '@PolyZone/BoxZone.lua',
+    'client/cl_main.lua',
+    'client/cl_events.lua',
+    'client/cl_eventhandlers.lua',
+    'client/cl_extraalerts.lua',
+    'client/cl_commands.lua',
+    'client/cl_loops.lua',
+} 
+server_script {
+    'server/sv_dispatchcodes.lua',
+    'server/sv_main.lua',
+    'server/versioncheck.lua'
+}
+
+ui_page 'ui/index.html'
 
 files {
-    'ui/img/*.png',
-    'ui/img/*.webp',
-    'ui/dashboard.html',
+    'ui/index.html',
     'ui/app.js',
     'ui/style.css',
 }
